@@ -12,6 +12,8 @@ function setup() {
 function draw() {
   background(220);
  
+  drawBackground();
+
   drawPanda(0, 0);
 }
 
@@ -50,4 +52,15 @@ function drawPanda(){
  
 
   pop();
+}
+
+function drawBackground(){
+
+  fill(180, 240, 250);
+    noStroke();
+    rect(0, 0, 400, 330);
+  
+  fill(80, 180, 90);
+    noStroke();
+    rect(0, 330, 400, 100);
 }
