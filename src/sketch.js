@@ -1,4 +1,9 @@
 
+let img;
+
+function preload() {
+  img = loadImage('assets/martyplain.png')
+}
 
 function setup() {
   // These lines are fitting our canvas
@@ -14,14 +19,18 @@ function draw() {
  
   drawBackground();
 
-  drawPanda(0, 0);
+  drawPanda(130, 290, 0.5);
+
+  drawMarty(170, 110, .8);
 }
 
-function drawPanda(){
+function drawPanda(x, y, s){
   //creature 
   push();
    
-     translate(200, 200);
+     translate(x, y);
+     scale(s);
+     
  // nose
    fill(100);
    stroke(0);
@@ -63,4 +72,12 @@ function drawBackground(){
   fill(80, 180, 90);
     noStroke();
     rect(0, 330, 400, 100);
+}
+
+function drawMarty(x, y, s) {
+  push();
+  translate(x, y);
+  scale(s);
+  image(img, 0, 0);
+  pop();
 }
