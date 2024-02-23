@@ -1,5 +1,6 @@
 
 let img;
+let y;
 
 function preload() {
   img = loadImage('assets/martyplain.png')
@@ -12,6 +13,7 @@ function setup() {
   // easier
   let myCanvas = createCanvas(400, 400);
   myCanvas.parent("canvas-parent");
+  y = 0;
 }
 
 function draw() {
@@ -19,7 +21,8 @@ function draw() {
  
   drawBackground();
 
-  drawPanda(130, 290, 0.5);
+  drawPanda(130, y, 0.5);
+  y++
 
   drawMarty(170, 110, .8);
 }
