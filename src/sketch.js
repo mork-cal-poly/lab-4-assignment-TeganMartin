@@ -1,6 +1,7 @@
 
 let img;
-let y;
+let y = 0;
+let s = 0.8;
 
 function preload() {
   img = loadImage('assets/martyplain.png')
@@ -13,18 +14,25 @@ function setup() {
   // easier
   let myCanvas = createCanvas(400, 400);
   myCanvas.parent("canvas-parent");
-  y = 0;
+  //y = 0;
+  //s = 0;
 }
 
 function draw() {
   background(220);
  
   drawBackground();
-
+ 
   drawPanda(130, y, 0.5);
-  y++
+  y++;
 
-  drawMarty(170, 110, .8);
+  drawMarty(300, 230, s);
+
+ if (y >= 250 && y <= 253) {
+
+    s++;
+
+  }
 }
 
 function drawPanda(x, y, s){
@@ -80,7 +88,11 @@ function drawBackground(){
 function drawMarty(x, y, s) {
   push();
   translate(x, y);
+
   scale(s);
-  image(img, 0, 0);
+
+
+  image(img, -151, -156);
+
   pop();
 }
