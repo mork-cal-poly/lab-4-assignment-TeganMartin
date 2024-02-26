@@ -26,16 +26,14 @@ function draw() {
   drawPanda(130, y, 0.5);
   y++;
 
-  drawTurtle(100,400,.5);
+  drawTurtle(100, 370, 0.1);
 
   drawMarty(300, 230, s);
 
  if (y >= 250 && y <= 253) {
 
     s++; 
- }
-
-  
+ } 
 }
 
 function drawPanda(x, y, s){
