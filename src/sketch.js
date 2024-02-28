@@ -2,6 +2,9 @@
 let img;
 let y = 0;
 let s = 0.8;
+let foxX;
+let foxY;
+let foxS;
 
 function preload() {
   img = loadImage('assets/martyplain.png')
@@ -28,7 +31,7 @@ function draw() {
 
   drawTurtle(100, 370, 0.1);
 
-  drawFoxy();
+  drawFoxy(395, 375, 0.2);
 
   drawMarty(300, 230, s);
 
@@ -156,10 +159,10 @@ function drawTurtle(x, y, s){
          pop()
      }
 
-function drawFoxy() {
+function drawFoxy(foxX, foxY, foxS) {
 push();
-translate(395, 375);  
-scale(0.2);
+translate(foxX, foxY);  
+scale(foxS);
 
 fill("rgb(219,143,3)");
 
