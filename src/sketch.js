@@ -2,6 +2,9 @@
 let img;
 let y = 0;
 let s = 0.8;
+let foxX;
+let foxY;
+let foxS;
 
 function preload() {
   img = loadImage('assets/martyplain.png')
@@ -27,6 +30,8 @@ function draw() {
   y++;
 
   drawTurtle(100, 370, 0.1);
+
+  drawFoxy(395, 375, 0.2);
 
   drawMarty(300, 230, s);
 
@@ -153,3 +158,76 @@ function drawTurtle(x, y, s){
        
          pop()
      }
+
+function drawFoxy(foxX, foxY, foxS) {
+push();
+translate(foxX, foxY);  
+scale(foxS);
+
+fill("rgb(219,143,3)");
+
+// arms
+push();
+rotate(PI/4);
+ellipse(-40, 30, 15, 140);
+pop();
+
+push();
+rotate(7*PI/4);
+ellipse(40, 30, 15, 140);
+pop();
+
+// tail
+push();
+rotate(PI/4);
+ellipse(20, 60, 30, 120);
+fill("white");
+arc(19, 100, 26, 40, 0, PI + PI/5, PIE);
+pop();
+
+// legs and body
+rect(-30, 50, 15, 160);
+rect(15, 50, 15, 160);
+rect(-35, -60, 70, 140, 30);
+
+// belly
+fill("rgba(255,228,179,0.81)");
+rect(-25, -40, 50, 100, 30);
+
+fill("rgb(219,143,3)");
+
+// ears
+triangle(-32, -100, -10, -118, -35, -125);
+triangle(32, -100, 10, -118, 35, -125);
+
+// nose
+triangle(-20, -80, 20, -80, 0, -60);
+fill("black");
+ellipse(0, -60, 7);
+
+// head shape
+noStroke();
+fill("rgb(219,143,3)");
+ellipse(0, -100, 65, 55);
+
+// eyes
+fill("white");
+ellipse(-15, -95, 9);
+ellipse(15, -95, 9);
+fill("black");
+ellipse(-15, -95, 6);
+ellipse(15, -95, 6);
+
+// whiskers
+stroke("black");
+line(-30, -75, -5, -65);
+line(30, -75, 5, -65);
+line(-33, -60, -5, -62);
+line(33, -60, 5, -62);
+
+pop();
+
+if (foxY <= 250) {
+  foxY = foxY + 5;
+}
+}
